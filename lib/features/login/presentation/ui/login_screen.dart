@@ -16,19 +16,21 @@ class LoginPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children:  [
-            const Text(
+             Text(
               'Login',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: AppTextStyles.boldType24,
             ),
             const  SizedBox(height: 8),
-            const Text(
+             Text(
               'Sign in to your account',
-              style: TextStyle(color: Colors.grey),
+              style: AppTextStyles.mediumType14,
             ),
             const  SizedBox(height: 32),
               TextField(
-              decoration: InputDecoration(
+                cursorColor: AppColors.primary, // Change the cursor color here
+                decoration: InputDecoration(
                 labelText: 'Username / Email',
                 labelStyle: AppTextStyles.semiBoldType14,
                 focusedBorder: const UnderlineInputBorder(
@@ -39,7 +41,8 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 16),
              TextField(
               obscureText: true,
-              decoration: InputDecoration(
+               cursorColor: AppColors.primary, // Change the cursor color here
+               decoration: InputDecoration(
                 labelText: 'Password',
                 suffixIcon:  const Icon(Icons.visibility_off),
                   labelStyle: AppTextStyles.semiBoldType14,
@@ -67,10 +70,15 @@ class LoginPage extends StatelessWidget {
               child:  Text('Login',style: AppTextStyles.boldType16.copyWith(color: AppColors.background),),
             ),
             const SizedBox(height: 32),
-             Text(
-              'Or login with account',
-              style: AppTextStyles.semiBoldType12
-            ),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: [
+                 Text(
+                  'Or login with account',
+                  style: AppTextStyles.semiBoldType12
+                             ),
+               ],
+             ),
             const SizedBox(height: 16),
             const LoginWithMailComponent(label: 'Google', icon: AppAssets.google,),
             const SizedBox(height: 16),
@@ -78,17 +86,22 @@ class LoginPage extends StatelessWidget {
             const SizedBox(height: 16),
             const LoginWithMailComponent(label: 'Apple', icon: AppAssets.apple,),
             const SizedBox(height: 32),
-            RichText(
-              text: TextSpan(
-                text: 'Don\'t have an account? ',
-                style: AppTextStyles.mediumType14,
-                children: [
-                  TextSpan(
-                    text: 'Register Here',
-                    style: AppTextStyles.boldType14,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    text: 'Don\'t have an account? ',
+                    style: AppTextStyles.mediumType14,
+                    children: [
+                      TextSpan(
+                        text: 'Register Here',
+                        style: AppTextStyles.boldType14,
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ],
         ),

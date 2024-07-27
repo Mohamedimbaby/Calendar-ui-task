@@ -10,6 +10,11 @@ class AppTextStyles {
       fontSize: AppSizes.size_16.sp,
     fontWeight: FontWeight.w700
   );
+  static  TextStyle boldType24 = TextStyle(
+    color:AppColors.natural900,
+      fontSize: AppSizes.size_24.sp,
+    fontWeight: FontWeight.w700
+  );
   static  TextStyle boldType14 = TextStyle(
     color:AppColors.natural900,
       fontSize: AppSizes.size_14.sp,
